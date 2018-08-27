@@ -1,0 +1,126 @@
+{% extends 'rso/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div style="padding-bottom: 20px;" class="col-md-12"></div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading panel-heading-custom">About {{ request.user.username }} </div>
+                        <div style="min-height: 150px;" class="panel-body">
+                            <p>{{ request.user.student.aboutMe }}</p>
+                        </div>
+
+                    </div>
+
+            </div>
+
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-custom">Your RSOs</div>
+                    <div style="min-height: 150px;" class="panel-body">
+
+                        {% if RSOs %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>RSO Name</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for rso in RSOs %}
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td>{{ rso.name }}</td>
+                                        <td>{{ rso.description }}</td>
+                                    </tr>
+                                {% endfor %}
+                                <th scope=""></th>
+                            </tbody>
+                        </table>
+                        {% else %}
+                            <div class="panel-body">Not a member of any RSOs yet.</div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-custom">Your Info</div>
+                    <div class="panel-body">
+                        <p><b>User Name</b>: {{ request.user.username }}</p>
+                        <p><b>First Name</b>: {{ request.user.first_name }}</p>
+                        <p><b>Last Name</b>: {{ request.user.last_name }}</p>
+                        <p><b>University</b>: {{ request.user.student.university }}</p>
+                        <p><b>Email</b>: {{ request.user.email }}</p>
+                        <p><b>Date Joined</b>: {{ request.user.date_joined }}</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-custom">Events</div>
+                    <div class="panel-body">
+
+
+                    {% if events %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>Event Name</td>
+                                    <td>Description</td>
+                                    <td>Address</td>
+                                    <td>RSO</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for event in events %}
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td>{{ event.name }}</td>
+                                        <td>{{ event.description }}</td>
+                                        <td>{{ event.address}}</td>
+                                        <td>{{ event.rso.name }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% else %}
+                            <div class="panel-body">No events.</div>
+                        {% endif %}
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

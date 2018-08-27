@@ -1,0 +1,51 @@
+{% extends 'rso/base.html' %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+{##}
+{#    <div id="registration-form">#}
+{#        <div class="container">#}
+
+
+    <div class="col-lg-4"></div>
+    <div id="content-container" class="container p-none">
+        <div class="panel panel-default lgn-container col-lg-4">
+            <form id="login-form" method="post"
+                  action="{% url 'rso:registration' %}">
+                {% csrf_token %}
+                
+                <div class="form-group">
+
+                        <label for="id_email">Email</label>
+                        <input id="id_email" name="email" 
+                                   type="email" class="form-control" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+
+                        <label for="id_username">Username</label>
+                        <input id="id_username" name="username" 
+                                   type="text" class="form-control" placeholder="username">
+                </div>
+                <div class="form-group">
+                        <label for="id_password">Password</label>
+                        <input id="id_password" name="password" 
+                                   type="password" class="form-control" placeholder="password">
+                </div>
+                
+                    {% if form.errors %}
+                        <p class=" label label-danger">
+                            Your username and password didn't match. 
+                            Please try again.
+                        </p>
+                    {% endif %}
+
+                    <input type="submit" value="Sign Up"
+                           class="btn btn-primary pull-right" />
+                    <input type="hidden" name="next" value="{{ next }}" />
+                
+            </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

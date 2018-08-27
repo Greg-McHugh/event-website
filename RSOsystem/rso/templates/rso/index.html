@@ -1,0 +1,39 @@
+{% extends 'rso/base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="col-md-1">
+    </div>
+
+    <div style="padding-top: 20px" class="col-md-10">
+        <div class="panel panel-default">
+            <div  class="panel-heading panel-heading-custom">All RSO Groups</div>
+
+            {% if allRSOs %}
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="row"></th>
+                                <td><b>RSO Name</b></td>
+                                <td><b>Description</b></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rso in allRSOs %}
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>{{ rso.name }}</td>
+                                    <td>{{ rso.description }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="panel-body">There are no RSOs.</div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
