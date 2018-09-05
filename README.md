@@ -20,4 +20,4 @@ Database Systems Project
 	}
 
 3. in event-website/RSOsystem/
-	$python manage.py
+	run at shell $python manage.py
