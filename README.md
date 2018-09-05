@@ -14,10 +14,11 @@ Database Systems Project
 	        'NAME': 'rso_system',					//make sure this database exists on your system 'create database rso_system;'
 	        'USER': 'greg',						//change to a user on your system
 	        'PASSWORD': 'password',					//change to the password of the above user
-	        'HOST': '',
+	        'HOST': 'localhost',
 	        'PORT': '',        
 	    }
 	}
 
 3. in event-website/RSOsystem/
-		$python manage.py
+		enter at terminal $python manage.py runserver 8080
+
