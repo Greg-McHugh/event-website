@@ -6,8 +6,7 @@ Database Systems Project
    $sudo pip install django
 
 2. For this project, I used MySQL. Make sure mysql and the necessary module are installed.
-   $sudo apt-get install mysql-server
-   $sudo apt-get install python-mysqldb
+   $sudo apt-get install mysql-server python-mysqldb
 
 2. In event-website/RSOsystem/RSOsystem/settings.py, you will need to change:
 
