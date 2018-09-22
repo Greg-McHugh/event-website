@@ -2,12 +2,12 @@
 Database Systems Project 
 
 1. install Django:
-	https://docs.djangoproject.com/en/2.1/topics/install/
-	$sudo pip install django
+   https://docs.djangoproject.com/en/2.1/topics/install/
+   $sudo pip install django
 
 2. For this project, I used MySQL. Make sure mysql and the necessary module are installed.
-	$sudo apt-get install mysql-server
-	$sudo apt-get install python-mysqldb
+   $sudo apt-get install mysql-server
+   $sudo apt-get install python-mysqldb
 
 2. In event-website/RSOsystem/RSOsystem/settings.py, you will need to change:
 
@@ -24,6 +24,6 @@ Database Systems Project
 	}
 
 3. in event-website/RSOsystem/
-	enter at terminal $python manage.py runserver 8080
-	website is then running on localhost at port 8080
+   enter at terminal $python manage.py runserver 8080
+   website is then running on localhost at port 8080
 
