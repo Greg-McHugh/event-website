@@ -22,7 +22,7 @@ Database Systems Project
 	    }
 	}
 
-3. in event-website/RSOsystem/
+3. in the directory event-website/RSOsystem/
    enter at terminal $python manage.py runserver 8080
-   website is then running on localhost at port 8080
 
+4. visit localhost:8080 in your web browser to test the website
